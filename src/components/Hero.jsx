@@ -16,6 +16,7 @@ const Hero = () => {
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>I am a 3rd year NRNU MEPhi Applied Maths student <br/>passionate about <u>web development</u></p>
         </div>
       </div>
+        <ComputersCanvas/>
     </section>
   )
 }
