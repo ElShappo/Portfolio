@@ -16,9 +16,42 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
   
-  const handleChange = (e) => {}
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // console.log(name, value);
+    setForm({ ...form, [name]: value})
+    // console.log(form);
+  }
 
-  const handleSubmit = (e) => {}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs.send(
+      "service_cpoiawe",
+      "template_miqccub",
+      {
+        from_name: form.name,
+        to_name: 'Deni',
+        from_email: form.email,
+        to_email: "deni.shaipp@gmail.com",
+        message: form.message,
+      },
+      "uohSpwglT7S9wTGt0"
+      )
+      .then( () => {
+        setLoading(false);
+        alert('Email has been sent!');
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }, error => {
+        setLoading(false);
+        console.log(error);
+        alert("Something went wrong!");
+      })
+  }
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
