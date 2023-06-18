@@ -24,7 +24,7 @@ const ExperienceCard = ({experience}) => {
       <div>
         <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
         <p className="text-secondary text-[20px] font-semibold">{experience.project}</p>
-        <ul className="mt-5 list-disc ml-5 space-y-2 text-red">
+        <ul className="mt-5 list-disc ml-5 space-y-2">
           {
             experience.points.map((point, index) => (
               <li key={index} className="text-slate-100 text-[14px]">{point}</li>

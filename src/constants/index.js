@@ -8,21 +8,16 @@ import {
     html,
     css,
     reactjs,
-    redux,
     tailwind,
     nodejs,
-    mongodb,
+    postgresql,
     git,
-    figma,
-    docker,
     cPlusPlus,
     vue,
     quasar,
-    react,
     carrent,
     jobit,
     tripguide,
-    threejs,
   } from "../assets";
   
   export const navLinks = [
@@ -81,8 +76,16 @@ import {
       icon: reactjs,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
+      name: "Vue JS",
+      icon: vue,
+    },
+    {
+      name: "Quasar",
+      icon: quasar,
+    },
+    {
+      name: "C++",
+      icon: cPlusPlus,
     },
     {
       name: "Tailwind CSS",
@@ -93,24 +96,12 @@ import {
       icon: nodejs,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
-      icon: threejs,
+      name: "PostgreSQL",
+      icon: postgresql,
     },
     {
       name: "git",
       icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
     },
   ];
   
@@ -156,7 +147,7 @@ import {
     {
       title: "React Developer",
       project: "Portfolio website",
-      icon: react,
+      icon: reactjs,
       iconBg: "#383E56",
       date: "June 2023 - present",
       points: [
