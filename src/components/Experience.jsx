@@ -9,19 +9,29 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({experience}) => {
   return (
     <VerticalTimelineElement
-      contentStyle={{background: "#1d1836", color: "#fff"}}
-      contentArrowStyle={{ borderRight: '7px solid #232631'}}
+      contentStyle={{ background: "#1d1836", color: "#fff" }}
+      contentArrowStyle={{ borderRight: '7px solid #232631' }}
       date={experience.date}
-      iconStyle={{ backround: experience.iconBg }}
+      iconStyle={{ background: experience.iconBg }}
       icon={
-        <div>
-          <img src={experience.icon} alt={experience.company_name}
+        <div className="flex justify-center items-center w-full h-full">
+          <img src={experience.icon} alt={experience.project}
             className="w-[60%] h-[60%] object-contain"
           />
         </div>
       }
     >
-      {experience.date}
+      <div>
+        <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
+        <p className="text-secondary text-[20px] font-semibold">{experience.project}</p>
+        <ul className="mt-5 list-disc ml-5 space-y-2 text-red">
+          {
+            experience.points.map((point, index) => (
+              <li key={index} className="text-slate-100 text-[14px]">{point}</li>
+            ))
+          }
+        </ul>
+      </div>
     </VerticalTimelineElement>
   )
 }
@@ -31,8 +41,8 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My Projects</p>
-        <h2 className={styles.sectionHeadText}>Description</h2>
+        <p className={styles.sectionSubText}>What I've done already</p>
+        <h2 className={styles.sectionHeadText}>Work experience.</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
@@ -48,4 +58,4 @@ const Experience = () => {
   )
 }
 
-export default SectionWrapper(Experience, "experience");
+export default SectionWrapper(Experience, "work");
